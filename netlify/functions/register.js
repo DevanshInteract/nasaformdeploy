@@ -14,13 +14,13 @@ exports.handler = async function(event) {
 
     await client.connect();
 
-    const collection = client.db("nasaHackathon").collection("teams");
+    const collection = client.db("nasaHackathon").collection("munpass");
 
     await collection.insertOne(data);
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: "Success! Your team has been registered." })
+      body: JSON.stringify({ message: "Success! Your registration has been saved." })
     };
 
   } catch (error) {
