@@ -321,57 +321,67 @@ color:black
             <p class="tagline">Explore • Debate • Revolutionize</p>
         </div>
         
-        <form class="registration-form" id="registrationForm">
-            <div class="form-group">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="+91 98765XXXXX">
-            </div>
-            
-            <div class="form-group">
-                <label for="organization">Organization/University</label>
-                <input type="text" id="organization" name="organization" placeholder="Your school or company">
-            </div>
-            
-            <div class="form-group">
-                <label for="experience">Experience Level</label>
-                <select id="experience" name="experience" required>
-                    <option class="select" value="">Select your level</option>
-                    <option class="beg" value="beginner">Beginner (0-1 years)</option>
-                    <option class="inter" value="intermediate">Intermediate (2-5 years)</option>
-                    <option class="adv" value="advanced">Advanced (5+ years)</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="skills">Primary Skills (comma-separated)</label>
-                <input type="text" id="skills" name="skills" placeholder="e.g., Python, Data Science, UI/UX, Hardware">
-            </div>
-            
-            <div class="checkbox-group">
-                <input type="checkbox" id="terms" name="terms" required>
-                <label for="terms">I agree to the terms and conditions and NASA Space Apps guidelines</label>
-            </div>
-            
-            <div class="checkbox-group">
-                <input type="checkbox" id="newsletter" name="newsletter">
-                <label for="newsletter">Subscribe to NASA Space Apps updates and news</label>
-            </div>
-            
-                 <button type="submit" class="submit-btn">
-    Register Now
-</button>
+     <form class="registration-form" id="registrationForm">
+    <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="+91 98765XXXXX">
+    </div>
+    
+    <div class="form-group">
+        <label for="organization">Organization/University</label>
+        <input type="text" id="organization" name="organization" placeholder="Your school or company">
+    </div>
+    
+    <div class="form-group">
+        <label for="teamName">Team Name</label>
+        <input type="text" id="teamName" name="teamName" placeholder="e.g., Space Innovators, Tech Explorers" required>
+    </div>
 
-        </form>
+    <div class="form-group">
+        <label for="member1">Team Member 1</label>
+        <input type="text" id="member1" name="member1" placeholder="">
+    </div>
+    
+    <div class="form-group">
+        <label for="member2">Team Member 2</label>
+        <input type="text" id="member2" name="member2" placeholder="">
+    </div>
+
+    <div class="form-group">
+        <label for="member3">Team Member 3</label>
+        <input type="text" id="member3" name="member3" placeholder="">
+    </div>
+
+    <div class="form-group">
+        <label for="member4">Team Member 4</label>
+        <input type="text" id="member4" name="member4" placeholder="">
+    </div>
+
+    <div class="checkbox-group">
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to the terms and conditions and NASA Space Apps guidelines</label>
+    </div>
+    
+    <div class="checkbox-group">
+        <input type="checkbox" id="newsletter" name="newsletter">
+        <label for="newsletter">Subscribe to NASA Space Apps updates and news</label>
+    </div>
+    
+    <button type="submit" class="submit-btn">
+        Register Now
+    </button>
+</form>
+
         
         <div class="info-cards">
             <div class="info-card">
@@ -417,7 +427,7 @@ color:black
         alert(result.message); 
 
         // The page will redirect, so we don't need to re-enable the button
-        window.location.href = 'https://rzp.io/rzp/fDCz3I3';
+        window.location.href = '';
 
     } catch (error) {
         console.error('Error:', error);
