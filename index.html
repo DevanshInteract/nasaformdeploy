@@ -66,7 +66,7 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
-      min-height: 100vh;
+      min-height: 150vh;
       display: flex;
       flex-direction: column;
     }
@@ -89,10 +89,8 @@
       color: white;
       animation: rotate 10s linear infinite;
     }
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
+    
+    
     h1 {
       color: #fff;
       font-size: 2.5rem;
@@ -345,6 +343,11 @@
             </select>
           </div>
 
+          <div class="form-group">
+            <label for="year">7. Past Experience</label>
+            <input type="text" id="experience" name="experience" placeholder="e.g. Attended Any other MUN" required />
+          </div>
+
           <!-- Portfolio Preferences -->
           <div class="form-group">
             <label for="portfolio1">
@@ -452,8 +455,8 @@
         const allTexts = [portfolio1, portfolio2, portfolio3];
 
         for (const text of allTexts) {
-            if (text.length > 30) {
-                alert('Each portfolio preference must be at least 30 characters long.');
+            if (text.length > 15) {
+                alert('Each portfolio preference must be at least 15 characters long.');
                 return; // Stop the submission
             }
         }
@@ -473,7 +476,7 @@
             });
 
             if (!response.ok) {
-                throw new Error('There was an issue with the server.');
+                throw new Error('There was an issue with the server. Please try again later.');
             }
             
             await response.json(); // Wait for the backend success message
