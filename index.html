@@ -454,22 +454,23 @@
     </div>
   </div>
 
-  <script>
+ <script>
   document.getElementById('registrationForm').addEventListener('submit', async function (e) {
       e.preventDefault();
 
       const form = e.target;
       const submitBtn = form.querySelector('.submit-btn');
 
-      // --- 1. Validate Portfolio Text Length (Minimum 30 characters) ---
+      // --- 1. Validate Portfolio Text Length (Maximum 30 characters) ---
       const portfolio1 = document.getElementById('portfolio1').value.trim();
       const portfolio2 = document.getElementById('portfolio2').value.trim();
       const portfolio3 = document.getElementById('portfolio3').value.trim();
       const allTexts = [portfolio1, portfolio2, portfolio3];
 
       for (const text of allTexts) {
-          if (text.length < 30) {
-              alert('Each portfolio preference must be at least 30 characters long.');
+          // --- THIS IS THE CHANGED LOGIC ---
+          if (text.length > 30) { 
+              alert('Each portfolio preference must be a maximum of 30 characters long.');
               return; // Stop the submission
           }
       }
@@ -492,7 +493,7 @@
               throw new Error('There was an issue with the server.');
           }
           
-          await response.json(); // Wait for the backend success message
+          await response.json(); 
           
           // --- 4. Redirect to Payment ---
           alert("✅ Registration Successful!\nRedirecting to payment gateway...");
@@ -500,13 +501,11 @@
 
       } catch (error) {
           console.error('Submission failed:', error);
-          // This is the corrected line:
           alert(`❌ Registration Failed: ${error.message}`); 
-          // Re-enable the button if there was an error
           submitBtn.disabled = false;
           submitBtn.textContent = 'Register Now';
       }
   });
- </script>
+</script>
 </body>
 </html>
