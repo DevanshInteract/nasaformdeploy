@@ -66,7 +66,7 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
-      min-height: 150vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
@@ -89,8 +89,10 @@
       color: white;
       animation: rotate 10s linear infinite;
     }
-    
-    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
     h1 {
       color: #fff;
       font-size: 2.5rem;
@@ -340,18 +342,16 @@
               <option value="icdie">International Council on Digital Influence & Ethics (ICDIE)</option>
               <option value="ipc">International Press Corps (IPC)</option>
               <option value="ipl">IPL Auction Committee</option>
+              <option value="wmaf">World Marketing and Advertising Forum (WMAF)</option>
+              <option value="unwomen">UN-WOMEN</option>
+              <option value="repro">Advancing Women’s Reproductive Autonomy and Ensuring Global Recognition of Reproductive Rights</option>
             </select>
-          </div>
-
-          <div class="form-group">
-            <label for="year">7. Past Experience</label>
-            <input type="text" id="experience" name="experience" placeholder="e.g. Attended Any other MUN" required />
           </div>
 
           <!-- Portfolio Preferences -->
           <div class="form-group">
             <label for="portfolio1">
-              7. Portfolio Preference 1<br>
+              7. Portfolio Preference 1 <a href="https://docs.google.com/spreadsheets/d/1aO8dK5cYWXm937Si2EHBSFZoaJ60QartKe1XAlIX6J0/edit?gid=1546791906" target="_blank" style="color:#4ecdc4;">Portfolio List ?</a></p><br>
               <small style="color:#aaa; font-size:12px;">(Minimum 30 characters, no abbreviations allowed)</small>
             </label>
             <textarea id="portfolio1" name="portfolio1" rows="3" placeholder="Describe your first portfolio preference in full sentences..." required></textarea>
@@ -397,7 +397,7 @@
             <p><span class="highlight">Agenda:</span> Responding to the Tariff Crisis – Reassessing Global Economic Cooperation Post Trump-Era Trade War.</p>
           </div>
           <div class="committee-card">
-            <h4>UNCSG : United Nations Committee on Space Governance </h4>
+            <h4>UNCSG : United Nations Committee on Space Governance</h4>
             <p><span class="highlight">Agenda:</span> Developing a Global Legal & Ethical Framework for Militarization, Commercialization & Colonization of Outer Space.</p>
           </div>
           <div class="committee-card">
@@ -412,12 +412,24 @@
             <h4>IPL Auction Committee</h4>
             <p><span class="highlight">Overview:</span> Fun & strategic – build your team, make bids & manage your squad.</p>
           </div>
+          <div class="committee-card">
+            <h4>World Marketing and Advertising Forum (WMAF)</h4>
+            <p><span class="highlight">Agenda:</span> Ethical Advertising and Consumer Manipulation in the Age of AI and Algorithms</p>
+          </div>
+          <div class="committee-card">
+            <h4>UN-WOMEN</h4>
+            <p><span class="highlight">Agenda:</span> Promoting Gender Equality and Empowering Women and Girls through Policy and Global Collaboration.</p>
+          </div>
+          <div class="committee-card">
+            <h4>Advancing Women’s Reproductive Autonomy and Ensuring Global Recognition of Reproductive Rights</h4>
+            <p><span class="highlight">Agenda:</span> Safeguarding reproductive rights, ensuring bodily autonomy, and addressing global disparities in healthcare access.</p>
+          </div>
         </div>
 
         <h3 class="sub-heading">🎟 Registration</h3>
         <div class="detail-box">
           <p><strong>Entry Fee:</strong> ₹1500</p>
-
+          <p><strong>Payment:</strong> Pay via the link after registration.</p>
         </div>
 
         <h3 class="sub-heading">🏆 Awards & Prizes</h3>
@@ -437,6 +449,7 @@
 
         <h3 class="sub-heading">📞 Contact</h3>
         <p><strong>Secretary-General:</strong><br> Anuprabha Bansod <br>📱 +91 9096085771</p>
+        
       </div>
     </div>
   </div>
@@ -448,15 +461,15 @@
         const form = e.target;
         const submitBtn = form.querySelector('.submit-btn');
 
-        // --- 1. Your Custom Validation ---
+        // --- 1. Validate Portfolio Text Length (Minimum 30 characters) ---
         const portfolio1 = document.getElementById('portfolio1').value.trim();
         const portfolio2 = document.getElementById('portfolio2').value.trim();
         const portfolio3 = document.getElementById('portfolio3').value.trim();
         const allTexts = [portfolio1, portfolio2, portfolio3];
 
         for (const text of allTexts) {
-            if (text.length > 15) {
-                alert('Each portfolio preference must be at least 15 characters long.');
+            if (text.length < 30) {
+                alert('Each portfolio preference must be at least 30 characters long.');
                 return; // Stop the submission
             }
         }
@@ -476,7 +489,7 @@
             });
 
             if (!response.ok) {
-                throw new Error('There was an issue with the server. Please try again later.');
+                throw new Error('There was an issue with the server.');
             }
             
             await response.json(); // Wait for the backend success message
@@ -487,12 +500,12 @@
 
         } catch (error) {
             console.error('Submission failed:', error);
-            alert(`❌ Registration Failed: ${error.message}`);
+            alert(❌ Registration Failed: ${error.message});
             // Re-enable the button if there was an error
             submitBtn.disabled = false;
             submitBtn.textContent = 'Register Now';
         }
     });
-</script>
+  </script>
 </body>
 </html>
