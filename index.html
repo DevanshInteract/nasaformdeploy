@@ -267,9 +267,62 @@
     }
 
     .styled-list li::before {
-      content: "✨";
+      content: "•";
       position: absolute;
       left: 0;
+      color: #4ecdc4;
+    }
+
+    /* Portfolio Info */
+    .portfolio-info {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(78, 205, 196, 0.1);
+      border: 1px solid rgba(78, 205, 196, 0.3);
+      border-radius: 10px;
+      display: none;
+    }
+
+    .portfolio-info.visible {
+      display: block;
+    }
+
+    .portfolio-info h4 {
+      color: #4ecdc4;
+      margin-bottom: 10px;
+    }
+
+    .portfolio-info p {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .portfolio-info a {
+      color: #4ecdc4;
+      text-decoration: underline;
+    }
+
+    /* Double Delegation Section */
+    .double-delegation {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(255, 193, 7, 0.1);
+      border: 1px solid rgba(255, 193, 7, 0.3);
+      border-radius: 10px;
+      display: none;
+    }
+
+    .double-delegation.visible {
+      display: block;
+    }
+
+    .double-delegation h4 {
+      color: #ffc107;
+      margin-bottom: 10px;
+    }
+
+    .form-group-double {
+      margin-bottom: 15px;
     }
 
     /* Responsive */
@@ -297,7 +350,7 @@
 
   <div class="container">
     <div class="header">
-      <div class="logo">🚀</div>
+      <div class="logo">N</div>
       <h1>NSA Model United Nations 2025</h1>
       <p class="subtitle">Registration Form</p>
       <p class="tagline">Explore • Debate • Revolutionize</p>
@@ -305,7 +358,7 @@
 
     <div class="content-wrapper">
       <!-- Registration Form -->
-      <div style="height: 1150px;" class="registration-form">
+      <div class="registration-form">
         <form id="registrationForm">
           <div class="form-group">
             <label for="fullName">1. Name of Participant</label>
@@ -347,30 +400,61 @@
             </select>
           </div>
 
+          <!-- Double Delegation Section for IPL -->
+          <div class="double-delegation" id="doubleDelegation">
+            <h4>Double Delegation for IPL Committee</h4>
+            <p>For the IPL Auction Committee, you can register as a team of two delegates representing the same franchise.</p>
+            <p>Select your delegation type:</p>
+            
+            <div class="form-group">
+              <label>
+                <input type="radio" name="delegationType" value="single" checked> Single Delegate
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+                <input type="radio" name="delegationType" value="double"> Double Delegation (Team of 2)
+              </label>
+            </div>
+            
+            <div id="partnerInfo" style="display: none; margin-top: 15px;">
+              <div class="form-group-double">
+                <label for="partnerName">Partner's Full Name</label>
+                <input type="text" id="partnerName" name="partnerName" placeholder="Enter your partner's full name" />
+              </div>
+              <div class="form-group-double">
+                <label for="partnerEmail">Partner's Email</label>
+                <input type="email" id="partnerEmail" name="partnerEmail" placeholder="partner.email@example.com" />
+              </div>
+              <div class="form-group-double">
+                <label for="partnerPhone">Partner's Phone Number</label>
+                <input type="tel" id="partnerPhone" name="partnerPhone" placeholder="+91 XXXXXXXXXX" />
+              </div>
+            </div>
+          </div>
+
           <!-- Portfolio Preferences -->
-         <div class="form-group">
-  <label for="portfolio1">
-    7. Portfolio Preference 1 <a href="https://docs.google.com/spreadsheets/d/1aO8dK5cYWXm937Si2EHBSFZoaJ60QartKe1XAlIX6J0/edit?gid=1546791906" target="_blank" style="color:#4ecdc4;">Portfolio List ?</a>
-    <small style="display: block; color:#aaa; font-size:12px; margin-top: 4px;">(Maximum 30 characters, no abbreviations allowed)</small>
-  </label>
-  <textarea id="portfolio1" name="portfolio1" rows="3" placeholder="Describe your first portfolio preference..." required></textarea>
-</div>
+          <div class="portfolio-info" id="portfolioInfo">
+            <h4>Portfolio Selection Guidelines</h4>
+            <p>Please review the portfolio list for your selected committee:</p>
+            <p><a href="#" id="portfolioLink" target="_blank">View Portfolio List</a></p>
+            <p><strong>Instructions:</strong> Maximum 30 characters per portfolio, no abbreviations allowed.</p>
+          </div>
 
-<div class="form-group">
-  <label for="portfolio2">
-    8. Portfolio Preference 2<br>
-    <small style="color:#aaa; font-size:12px;">(Maximum 30 characters, no abbreviations allowed)</small>
-  </label>
-  <textarea id="portfolio2" name="portfolio2" rows="3" placeholder="Describe your second portfolio preference..." required></textarea>
-</div>
+          <div class="form-group">
+            <label for="portfolio1">7. Portfolio Preference 1</label>
+            <textarea id="portfolio1" name="portfolio1" rows="3" placeholder="Describe your first portfolio preference..." required></textarea>
+          </div>
 
-<div class="form-group">
-  <label for="portfolio3">
-    9. Portfolio Preference 3<br>
-    <small style="color:#aaa; font-size:12px;">(Maximum 30 characters, no abbreviations allowed)</small>
-  </label>
-  <textarea id="portfolio3" name="portfolio3" rows="3" placeholder="Describe your third portfolio preference..." required></textarea>
-</div>
+          <div class="form-group">
+            <label for="portfolio2">8. Portfolio Preference 2</label>
+            <textarea id="portfolio2" name="portfolio2" rows="3" placeholder="Describe your second portfolio preference..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="portfolio3">9. Portfolio Preference 3</label>
+            <textarea id="portfolio3" name="portfolio3" rows="3" placeholder="Describe your third portfolio preference..." required></textarea>
+          </div>
 
           <button type="submit" class="submit-btn">Register Now</button>
         </form>
@@ -385,7 +469,7 @@
           <p>🛡 <strong>Organized by:</strong> NASA SpaceApps Nagpur & The Youthopian Force</p>
         </div>
 
-        <h3 class="sub-heading">🏛 Committees & Agendas</h3>
+        <h3 class="sub-heading">Committees & Agendas</h3>
         <div class="committee-list">
           <div class="committee-card">
             <h4>Lok Sabha Committee</h4>
@@ -396,20 +480,21 @@
             <p><span class="highlight">Agenda:</span> Responding to the Tariff Crisis – Reassessing Global Economic Cooperation Post Trump-Era Trade War.</p>
           </div>
           <div class="committee-card">
-            <h4>UNCSG : United Nations Committee on Space Governance</h4>
+            <h4>UNCSG: United Nations Committee on Space Governance</h4>
             <p><span class="highlight">Agenda:</span> Developing a Global Legal & Ethical Framework for Militarization, Commercialization & Colonization of Outer Space.</p>
           </div>
           <div class="committee-card">
-            <h4>ICDIE : International Council on Digital Influence & Ethics</h4>
+            <h4>ICDIE: International Council on Digital Influence & Ethics</h4>
             <p><span class="highlight">Agenda:</span> Regulating Digital Influence – Ethics, Free Speech & the Power of Content Creators.</p>
           </div>
           <div class="committee-card">
-            <h4>IPC : International Press Corps</h4>
+            <h4>IPC: International Press Corps</h4>
             <p><span class="highlight">Overview:</span> For budding journalists – report, investigate, and present narratives from all committees.</p>
           </div>
           <div class="committee-card">
             <h4>IPL Auction Committee</h4>
-            <p><span class="highlight">Overview:</span> Fun & strategic – build your team, make bids & manage your squad.</p>
+            <p><span class="highlight">Overview:</span> Strategic team-building simulation where delegates act as franchise owners, making bidding decisions and managing squads.</p>
+            <p><span class="highlight">Special Feature:</span> Double delegation option available - register as a team of two delegates representing the same franchise.</p>
           </div>
           <div class="committee-card">
             <h4>World Marketing and Advertising Forum (WMAF)</h4>
@@ -417,67 +502,134 @@
           </div>
           <div class="committee-card">
             <h4>UN-WOMEN</h4>
-            <p><span class="highlight">Agenda:</span>Advancing Women’s Reproductive Autonomy and Ensuring Global Recognition of Reproductive Rights.</p>
+            <p><span class="highlight">Agenda:</span> Advancing Women's Reproductive Autonomy and Ensuring Global Recognition of Reproductive Rights.</p>
           </div>
         </div>
 
-        <h3 class="sub-heading">🎟 Registration</h3>
+        <h3 class="sub-heading">Registration</h3>
         <div class="detail-box">
-          <p><strong>Entry Fee:</strong> ₹1230</p>
+          <p><strong>Entry Fee:</strong> ₹1230 per delegate</p>
+          <p><strong>Double Delegation:</strong> ₹2460 for IPL team of two delegates</p>
           <p><strong>Payment:</strong> Pay via the link after registration.</p>
         </div>
 
-        <h3 class="sub-heading">🏆 Awards & Prizes</h3>
+        <h3 class="sub-heading">Awards & Prizes</h3>
         <ul class="styled-list">
           <li>Cash Prize for Best Delegate (each committee)</li>
           <li>Exciting Goodies & Recognition</li>
-          <li>NASA logo on your MUN resume – ultimate flex 🚀</li>
+          <li>NASA logo on your MUN resume – ultimate credential</li>
         </ul>
 
-        <h3 class="sub-heading">🔒 Guidelines</h3>
+        <h3 class="sub-heading">Guidelines</h3>
         <ul class="styled-list">
           <li>No refund after registration</li>
           <li>Payment confirmation (screenshot) is mandatory</li>
           <li>Portfolio preferences required; allotments based on experience</li>
           <li>Cash prize applicable only for Best Delegate</li>
+          <li>For IPL double delegation, both partners must register together with complete information</li>
         </ul>
 
-        <h3 class="sub-heading">📞 Contact</h3>
+        <h3 class="sub-heading">Contact</h3>
         <p><strong>Secretary-General:</strong><br> Anuprabha Bansod <br>📱 +91 9096085771</p>
         
       </div>
     </div>
   </div>
 
- <script>
-  document.getElementById('registrationForm').addEventListener('submit', async function (e) {
+  <script>
+    // Portfolio links for each committee
+    const portfolioLinks = {
+      'lok': 'https://docs.google.com/spreadsheets/d/1aO8dK5cYWXm937Si2EHBSFZoaJ60QartKe1XAlIX6J0/edit?gid=1546791906',
+      'g20': 'https://docs.google.com/spreadsheets/d/1aO8dK5cYWXm937Si2EHBSFZoaJ60QartKe1XAlIX6J0/edit?gid=84552788#gid=84552788',
+      'uncsg': 'https://docs.google.com/spreadsheets/d/1aO8dK5cYWXm937Si2EHBSFZoaJ60QartKe1XAlIX6J0/edit?gid=1363620690#gid=1363620690',
+      'icdie': 'https://docs.google.com/spreadsheets/d/1aO8dK5cYWXm937Si2EHBSFZoaJ60QartKe1XAlIX6J0/edit?gid=844542721#gid=844542721',
+      'ipc': 'https://docs.google.com/spreadsheets/d/1aO8dK5cYWXm937Si2EHBSFZoaJ60QartKe1XAlIX6J0/edit?gid=1546791906',
+      'ipl': 'https://docs.google.com/spreadsheets/d/1aO8dK5cYWXm937Si2EHBSFZoaJ60QartKe1XAlIX6J0/edit?gid=1678691804#gid=1678691804',
+      'wmaf': 'https://docs.google.com/spreadsheets/d/1aO8dK5cYWXm937Si2EHBSFZoaJ60QartKe1XAlIX6J0/edit?gid=1546791906',
+      'unwomen': 'https://docs.google.com/spreadsheets/d/1aO8dK5cYWXm937Si2EHBSFZoaJ60QartKe1XAlIX6J0/edit?gid=1546791906'
+    };
+
+    // Show portfolio info and double delegation when committee is selected
+    document.getElementById('committee').addEventListener('change', function(e) {
+      const selectedCommittee = e.target.value;
+      const portfolioInfo = document.getElementById('portfolioInfo');
+      const portfolioLink = document.getElementById('portfolioLink');
+      const doubleDelegation = document.getElementById('doubleDelegation');
+      
+      if (selectedCommittee) {
+        portfolioLink.href = portfolioLinks[selectedCommittee];
+        portfolioInfo.classList.add('visible');
+        
+        // Show double delegation only for IPL committee
+        if (selectedCommittee === 'ipl') {
+          doubleDelegation.classList.add('visible');
+        } else {
+          doubleDelegation.classList.remove('visible');
+          document.getElementById('partnerInfo').style.display = 'none';
+        }
+      } else {
+        portfolioInfo.classList.remove('visible');
+        doubleDelegation.classList.remove('visible');
+        document.getElementById('partnerInfo').style.display = 'none';
+      }
+    });
+
+    // Toggle partner info when double delegation is selected
+    document.querySelectorAll('input[name="delegationType"]').forEach(radio => {
+      radio.addEventListener('change', function() {
+        const partnerInfo = document.getElementById('partnerInfo');
+        if (this.value === 'double') {
+          partnerInfo.style.display = 'block';
+        } else {
+          partnerInfo.style.display = 'none';
+        }
+      });
+    });
+
+    // Validate form submission
+    document.getElementById('registrationForm').addEventListener('submit', async function (e) {
       e.preventDefault();
 
       const form = e.target;
       const submitBtn = form.querySelector('.submit-btn');
+      const committee = document.getElementById('committee').value;
 
-      // --- 1. Validate Portfolio Text Length (Maximum 30 characters) ---
+      // Validate Portfolio Text Length (Maximum 30 characters)
       const portfolio1 = document.getElementById('portfolio1').value.trim();
       const portfolio2 = document.getElementById('portfolio2').value.trim();
       const portfolio3 = document.getElementById('portfolio3').value.trim();
       const allTexts = [portfolio1, portfolio2, portfolio3];
 
       for (const text of allTexts) {
-          // --- THIS IS THE CHANGED LOGIC ---
-          if (text.length > 30) { 
-              alert('Each portfolio preference must be a maximum of 30 characters long.');
-              return; // Stop the submission
-          }
+        if (text.length > 30) { 
+          alert('Each portfolio preference must be a maximum of 30 characters long.');
+          return; // Stop the submission
+        }
       }
 
-      // --- 2. Disable Button and Prepare Data ---
+      // For IPL double delegation, validate partner information
+      if (committee === 'ipl') {
+        const delegationType = document.querySelector('input[name="delegationType"]:checked').value;
+        if (delegationType === 'double') {
+          const partnerName = document.getElementById('partnerName').value.trim();
+          const partnerEmail = document.getElementById('partnerEmail').value.trim();
+          const partnerPhone = document.getElementById('partnerPhone').value.trim();
+
+          if (!partnerName || !partnerEmail || !partnerPhone) {
+            alert('Please provide complete partner information for double delegation.');
+            return;
+          }
+        }
+      }
+
+      // Disable Button and Prepare Data
       submitBtn.disabled = true;
       submitBtn.textContent = 'Processing...';
       
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
 
-      // --- 3. Send to Backend ---
+      // Send to Backend
       try {
           const response = await fetch('/.netlify/functions/submit', {
               method: 'POST',
@@ -490,17 +642,17 @@
           
           await response.json(); 
           
-          // --- 4. Redirect to Payment ---
-          alert("✅ Registration Successful!\nRedirecting to payment gateway...");
+          // Redirect to Payment
+          alert("Registration Successful!\nRedirecting to payment gateway...");
           window.location.href = "https://rzp.io/rzp/IK8oAJFr";
 
       } catch (error) {
           console.error('Submission failed:', error);
-          alert(`❌ Registration Failed: ${error.message}`); 
+          alert(`Registration Failed: ${error.message}`); 
           submitBtn.disabled = false;
           submitBtn.textContent = 'Register Now';
       }
-  });
-</script>
+    });
+  </script>
 </body>
 </html>
