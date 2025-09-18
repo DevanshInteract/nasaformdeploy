@@ -325,14 +325,14 @@
       margin-bottom: 15px;
     }
 
-    .spectator-options {
-        margin-top: 20px;
-        padding: 15px;
-        background: rgba(120, 200, 255, 0.1);
-        border: 1px solid rgba(120, 200, 255, 0.3);
-        border-radius: 10px;
-        display: none;
-    }
+    .spectator-options {
+        margin-top: 20px;
+        padding: 15px;
+        background: rgba(120, 200, 255, 0.1);
+        border: 1px solid rgba(120, 200, 255, 0.3);
+        border-radius: 10px;
+        display: none;
+    }
 
     /* Responsive */
     @media (max-width: 768px) {
@@ -405,7 +405,7 @@
               <option value="ipl">IPL Auction Committee</option>
               <option value="unwomen">UN-WOMEN</option>
               <option value="hpc">Harry Potter Committee</option>
-              <option value="spectator">Spectator Pass</option>
+              <option value="spectator">Spectator Pass</option>
             </select>
           </div>
 
@@ -413,13 +413,11 @@
             <h4>Double Delegation for IPL Committee</h4>
             <p>For the IPL Auction Committee, you can register as a team of two delegates representing the same franchise.</p>
             <p>Select your delegation type:</p>
-  
             <div class="form-group">
               <label>
                 <input type="radio" name="delegationType" value="double"> Double Delegation (Team of 2)
               </label>
             </div>
-            
             <div id="partnerInfo" style="display: none; margin-top: 15px;">
               <div class="form-group-double">
                 <label for="partnerName">Partner's Full Name</label>
@@ -436,46 +434,45 @@
             </div>
           </div>
 
-          <div class="spectator-options" id="spectatorOptions">
-            <h4>Spectator Options</h4>
-            <p>Select your pass type:</p>
-            <div class="form-group-double">
-              <label>
-                <input type="radio" name="spectatorPackage" value="noFood" checked> With No Food (₹150)
-              </label>
-            </div>
-            <div class="form-group-double">
-              <label>
-                <input type="radio" name="spectatorPackage" value="withFood"> With Food (₹450)
-              </label>
-            </div>
-          </div>
+                    <div class="spectator-options" id="spectatorOptions">
+            <h4>Spectator Options</h4>
+            <p>Select your pass type:</p>
+            <div class="form-group-double">
+              <label>
+                <input type="radio" name="spectatorPackage" value="noFood" checked> With No Food (₹150)
+              </label>
+            </div>
+            <div class="form-group-double">
+              <label>
+                <input type="radio" name="spectatorPackage" value="withFood"> With Food (₹450)
+              </label>
+            </div>
+          </div>
 
+                    <div id="portfolioContainer">
+                        <div class="portfolio-info" id="portfolioInfo">
+              <h4>Portfolio Selection Guidelines</h4>
+              <p>Please review the portfolio list for your selected committee:</p>
+              <p><a href="#" id="portfolioLink" target="_blank">View Portfolio List</a></p>
+              <p><strong>Instructions:</strong> Maximum 30 characters per portfolio, no abbreviations allowed.</p>
+            </div>
 
-          <div id="portfolioContainer">
-            <div class="portfolio-info" id="portfolioInfo">
-              <h4>Portfolio Selection Guidelines</h4>
-              <p>Please review the portfolio list for your selected committee:</p>
-              <p><a href="#" id="portfolioLink" target="_blank">View Portfolio List</a></p>
-              <p><strong>Instructions:</strong> Maximum 30 characters per portfolio, no abbreviations allowed.</p>
-            </div>
+            <div class="form-group">
+              <label for="portfolio1">7. Portfolio Preference 1</label>
+              <textarea id="portfolio1" name="portfolio1" rows="3" placeholder="Describe your first portfolio preference..." required></textarea>
+            </div>
 
-            <div class="form-group">
-              <label for="portfolio1">7. Portfolio Preference 1</label>
-              <textarea id="portfolio1" name="portfolio1" rows="3" placeholder="Describe your first portfolio preference..." required></textarea>
-            </div>
+            <div class="form-group">
+              <label for="portfolio2">8. Portfolio Preference 2</label>
+              <textarea id="portfolio2" name="portfolio2" rows="3" placeholder="Describe your second portfolio preference..." required></textarea>
+            </div>
 
-            <div class="form-group">
-              <label for="portfolio2">8. Portfolio Preference 2</label>
-              <textarea id="portfolio2" name="portfolio2" rows="3" placeholder="Describe your second portfolio preference..." required></textarea>
-            </div>
-
-            <div class="form-group">
-              <label for="portfolio3">9. Portfolio Preference 3</label>
-              <textarea id="portfolio3" name="portfolio3" rows="3" placeholder="Describe your third portfolio preference..." required></textarea>
-            </div>
-          </div>
-                    <button type="submit" class="submit-btn">Register Now</button>
+            <div class="form-group">
+              <label for="portfolio3">9. Portfolio Preference 3</label>
+              <textarea id="portfolio3" name="portfolio3" rows="3" placeholder="Describe your third portfolio preference..." required></textarea>
+            </div>
+          </div>
+                    <button type="submit" class="submit-btn">Register Now</button>
         </form>
       </div>
 
@@ -528,8 +525,8 @@
         <div class="detail-box">
           <p><strong>Entry Fee:</strong> ₹1230 per delegate</p>
           <p><strong>Double Delegation:</strong> ₹2460 for IPL team of two delegates</p>
-          <p><strong>Spectator Pass (No Food):</strong> ₹150</p>
-          <p><strong>Spectator Pass (With Food):</strong> ₹450</p>
+          <p><strong>Spectator Pass (No Food):</strong> ₹150</p>
+          <p><strong>Spectator Pass (With Food):</strong> ₹450</p>
           <p><strong>Payment:</strong> Pay via the link after registration.</p>
         </div>
 
@@ -551,7 +548,6 @@
 
         <h3 class="sub-heading">Contact</h3>
         <p><strong>Secretary-General:</strong><br> Anuprabha Bansod <br>📱 +91 9096085771</p>
-        
       </div>
     </div>
   </div>
@@ -651,7 +647,7 @@
       // Disable Button and Prepare Data
       submitBtn.disabled = true;
       submitBtn.textContent = 'Processing...';
-      
+      
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
 
@@ -665,9 +661,9 @@
           if (!response.ok) {
               throw new Error('There was an issue with the server.');
           }
-          
-          await response.json(); 
-          
+          
+          await response.json(); 
+          
         // Redirect to Payment based on selection
         alert("Registration Successful!\nRedirecting to payment gateway...");
         
@@ -678,9 +674,9 @@
         } else if (committee === 'spectator') {
           const spectatorPackage = data.spectatorPackage;
           if (spectatorPackage === 'withFood') {
-            paymentLink = "https://rzp.io/rzp/RkbuS5vq"; // Replace with your "With Food" link
+            paymentLink = "https://rzp.io/lY4cAJFf"; // Replace with your "With Food" link
           } else {
-            paymentLink = "https://rzp.io/rzp/ITRYOqG"; // Replace with your "No Food" link
+            paymentLink = "https://rzp.io/lY4cAJFr"; // Replace with your "No Food" link
           }
         } else {
           paymentLink = "https://rzp.io/rzp/IK8oAJFr"; // All other committees (single delegation)
