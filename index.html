@@ -637,9 +637,21 @@
           
           await response.json(); 
           
-          // Redirect to Payment
-          alert("Registration Successful!\nRedirecting to payment gateway...");
-          window.location.href = "https://rzp.io/rzp/IK8oAJFr";
+       // Redirect to Payment
+alert("Registration Successful!\nRedirecting to payment gateway...");
+
+// Get the committee and delegation type to determine the payment link
+const committee = document.getElementById('committee').value;
+const delegationType = document.querySelector('input[name="delegationType"]:checked')?.value;
+let paymentLink = "https://rzp.io/rzp/IK8oAJFr"; // Default single delegation link
+
+// Check if it's the IPL committee and a double delegation
+if (committee === 'ipl' && delegationType === 'double') {
+    paymentLink = "https://rzp.io/rzp/LIvZtR6";
+}
+
+window.location.href = paymentLink;
+
 
       } catch (error) {
           console.error('Submission failed:', error);
